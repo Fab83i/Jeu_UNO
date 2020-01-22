@@ -8,6 +8,7 @@ public class CarteClassique extends Carte {
 	
 	
 	public CarteClassique( Couleur couleur , int numero) {
+		
 		super();
 		this.numero = numero;
 		
@@ -15,14 +16,9 @@ public class CarteClassique extends Carte {
 	
 
 
-
-
-
-
 	public int getNumero() {
 		return numero;
 	}
-	
 	
 	
 	

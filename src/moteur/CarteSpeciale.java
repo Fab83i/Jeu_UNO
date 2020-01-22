@@ -6,6 +6,8 @@ public abstract class CarteSpeciale extends Carte {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
 
 	
 	

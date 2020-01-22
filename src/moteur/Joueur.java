@@ -6,8 +6,17 @@ public abstract class Joueur {
 	
 	
 	private ArrayList<Carte> carteEnMain;
+	private int numeroJoueur;
 	
 	
+
+	public int getNumeroJoueur() {
+		return numeroJoueur;
+	}
+
+	public void setNumeroJoueur(int numeroJoueur) {
+		this.numeroJoueur = numeroJoueur;
+	}
 
 	public ArrayList<Carte> getCarteEnMain() {
 		return carteEnMain;

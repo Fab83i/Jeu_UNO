@@ -3,7 +3,6 @@ package moteur;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import moteur.Carte.Couleur;
 
 public class Partie {
 	
@@ -51,10 +50,10 @@ public class Partie {
 		
 		for (int x=0 ; x<talon.getCards().size() ; x++) {
 			if (talon.getCards().get(x) instanceof CarteClassique) {
-				System.out.println("C'est un " + ((CarteClassique) talon.getCards().get(x)).getNumero()+ " et la couleur est " + talon.getCards().get(x).couleur );
+				System.out.println("C'est un " + ((CarteClassique) talon.getCards().get(x)).getNumero()+ " et la couleur est " + talon.getCards().get(x).getCouleur() );
 			}
 			else {
-				System.out.println("C'est un "+talon.getCards().get(x).getClass().getSimpleName() +" et sa couleur est : " + talon.getCards().get(x).couleur );
+				System.out.println("C'est un "+talon.getCards().get(x).getClass().getSimpleName() +" et sa couleur est : " + talon.getCards().get(x).getCouleur() );
 			}
 		}
 		
@@ -94,8 +93,9 @@ public class Partie {
 			for (int x=0 ; x<8 ; x++) {
 				j.pioche(talon);
 
+
 			}
-			System.out.println("les cartes du joueur " + joueurEnCours + " sont : " + j.getCarteEnMain());
+		System.out.println("les cartes du joueur " + j.getNumeroJoueur() + " sont : " + j.getCarteEnMain());
 		}
 		
 		//Creation des joueurs virtuels et distribution

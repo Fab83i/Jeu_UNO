@@ -48,9 +48,7 @@ public class Talon {
 		}
 		
 		for (int i=1 ; i<5 ; i++) {
-			cards.add(new Joker(Couleur.Noir));
-			
-				
+			cards.add(new Joker(Couleur.Noir));		
 		}
 		
 		for (int i=1 ; i<5 ; i++) {
@@ -71,7 +69,6 @@ public class Talon {
 			cards.add(new Sens(Couleur.Vert));
 		}
 		
-		System.out.println("voici la 3 : " + cards.get(3).getCouleur());	
 		
 		
 		

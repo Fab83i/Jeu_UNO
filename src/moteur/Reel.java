@@ -30,7 +30,7 @@ public class Reel extends Joueur{
 
 
 	public Reel( String prenom, int age) {
-		
+		super();
 		this.prenom = prenom;
 		this.age = age;
 	}
