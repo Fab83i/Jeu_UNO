@@ -3,7 +3,6 @@ package moteur;
 public abstract class Carte {
 	
 	
-	private Partie p;
 
 	
 	public enum Couleur{
@@ -15,18 +14,18 @@ public abstract class Carte {
 		
 	}
 	
-	Couleur coul;
+	Couleur couleur;
 
 	public Carte() {
 		
 	}
 	
 	public void setCouleur(Couleur couleur) {
-		this.coul = couleur;
+		this.couleur = couleur;
 	}
 
 	public Couleur getCouleur() {
-		return coul;
+		return this.couleur;
 	}
 
 	

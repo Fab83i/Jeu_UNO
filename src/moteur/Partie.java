@@ -3,6 +3,8 @@ package moteur;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import moteur.Carte.Couleur;
+
 public class Partie {
 	
 	
@@ -13,7 +15,6 @@ public class Partie {
 	private ArrayList<Joueur> joueur;
 	private Pile pile;
 	private Talon talon;
-	private boolean rotation;
 	private int sens;
 	private int joueurEnCours;
 	private boolean fin;
@@ -50,10 +51,10 @@ public class Partie {
 		
 		for (int x=0 ; x<talon.getCards().size() ; x++) {
 			if (talon.getCards().get(x) instanceof CarteClassique) {
-				System.out.println("C'est un " + ((CarteClassique) talon.getCards().get(x)).getNumero()+ " et la couleur est " + talon.getCards().get(x).coul );
+				System.out.println("C'est un " + ((CarteClassique) talon.getCards().get(x)).getNumero()+ " et la couleur est " + talon.getCards().get(x).couleur );
 			}
 			else {
-				System.out.println("C'est un "+talon.getCards().get(x).getClass().getSimpleName() +" et sa couleur est : " + talon.getCards().get(x).coul );
+				System.out.println("C'est un "+talon.getCards().get(x).getClass().getSimpleName() +" et sa couleur est : " + talon.getCards().get(x).couleur );
 			}
 		}
 		

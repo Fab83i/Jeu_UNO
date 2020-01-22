@@ -14,6 +14,7 @@ public class Talon {
 	public Talon(Partie p) {
 		cards = new ArrayList<>();
 		
+		
 		// Ajout des cartes classiques 1 à 9 en double
 		for (int i=1 ; i<10 ; i++) {
 			cards.add(new CarteClassique(Couleur.Rouge,i));
@@ -70,7 +71,7 @@ public class Talon {
 			cards.add(new Sens(Couleur.Vert));
 		}
 		
-			
+		System.out.println("voici la 3 : " + cards.get(3).getCouleur());	
 		
 		
 		
