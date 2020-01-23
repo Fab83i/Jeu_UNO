@@ -1,6 +1,5 @@
 package moteur;
 
-import moteur.Carte.Couleur;
 
 public class ClassePrincipale {
 

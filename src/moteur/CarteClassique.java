@@ -9,7 +9,7 @@ public class CarteClassique extends Carte {
 	
 	public CarteClassique( Couleur couleur , int numero) {
 		
-		super();
+		super(couleur);
 		this.numero = numero;
 		
 	}

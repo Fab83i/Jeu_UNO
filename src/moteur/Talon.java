@@ -2,7 +2,7 @@ package moteur;
 
 import java.util.ArrayList;
 
-import moteur.Carte.Couleur;
+import moteur.Couleur;
 
 public class Talon {
 	

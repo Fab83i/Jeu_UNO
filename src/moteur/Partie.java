@@ -144,7 +144,7 @@ public class Partie {
 			
 			if (joueur.get(joueurEnCours).getCarteEnMain().get(x)  instanceof CarteSpeciale) {
 				
-				if ( joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == pile.getCards().get(pile.getCards().size() - 1).getCouleur() || joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == Carte.Couleur.Noir ) {
+				if ( joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == pile.getCards().get(pile.getCards().size() - 1).getCouleur() || joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == Couleur.Noir ) {
 					carteJouable.add(joueur.get(joueurEnCours).getCarteEnMain().get(x));
 				}
 				
@@ -153,7 +153,7 @@ public class Partie {
 			// Test pour carte classique avec couleur, noir ou numero
 			
 			else if (joueur.get(joueurEnCours).getCarteEnMain().get(x)  instanceof CarteClassique) {
-				if (joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == pile.getCards().get(pile.getCards().size() - 1).getCouleur()   ||  joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == Carte.Couleur.Noir || ((CarteClassique) joueur.get(joueurEnCours).getCarteEnMain().get(x)).getNumero() == ((CarteClassique) pile.getCards().get(pile.getCards().size() - 1)).getNumero() ) {
+				if (joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == pile.getCards().get(pile.getCards().size() - 1).getCouleur()   ||  joueur.get(joueurEnCours).getCarteEnMain().get(x).getCouleur() == Couleur.Noir || ((CarteClassique) joueur.get(joueurEnCours).getCarteEnMain().get(x)).getNumero() == ((CarteClassique) pile.getCards().get(pile.getCards().size() - 1)).getNumero() ) {
 					carteJouable.add(joueur.get(joueurEnCours).getCarteEnMain().get(x));
 			}
 			}
