@@ -19,6 +19,19 @@ public class CarteClassique extends Carte {
 	public int getNumero() {
 		return numero;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "CarteClassique []";
+	}
+
+
+
+	
+	
+	
 	
 	
 	

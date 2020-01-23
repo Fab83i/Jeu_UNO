@@ -4,6 +4,8 @@ public abstract class Carte {
 	
 	
 	
+	
+
 	Couleur couleur;
 
 	public Carte(Couleur couleur) {
@@ -17,6 +19,13 @@ public abstract class Carte {
 	public Couleur getCouleur() {
 		return this.couleur;
 	}
+
+	@Override
+	public String toString() {
+		return "Carte [toString()=" + super.toString() + "]";
+	}
+	
+	
 
 	
 	

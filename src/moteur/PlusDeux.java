@@ -8,7 +8,7 @@ public class PlusDeux extends CarteSpeciale{
 	
 
 	public PlusDeux(Couleur couleur) {
-		super();
+		super(couleur);
 		
 		
 		
@@ -22,6 +22,15 @@ public class PlusDeux extends CarteSpeciale{
 
 		
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "PlusDeux []";
+	}
+	
+	
 
 	
 	

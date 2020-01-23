@@ -2,17 +2,18 @@ package moteur;
 
 public class SuperJoker extends CarteSpeciale {
 	
+	private Talon talon;
 	
 	public SuperJoker(Couleur couleur) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	private Talon talon;
+	
 	
 	public void supJok(Joueur j , Couleur couleur) {
 		
-		for (int i=0 ; i<5 ; i++) {
+		for (int i=0 ; i<4 ; i++) {
 			j.pioche(talon);
 		}
 		super.setCouleur(couleur);
@@ -20,6 +21,15 @@ public class SuperJoker extends CarteSpeciale {
 		
 		
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "SuperJoker []";
+	}
+	
+	
 
 	
 

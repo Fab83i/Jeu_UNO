@@ -1,6 +1,7 @@
 package moteur;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import moteur.Couleur;
 
@@ -69,12 +70,13 @@ public class Talon {
 			cards.add(new Sens(Couleur.Vert));
 		}
 		
-		
-		
+		Collections.shuffle(cards);
+		//System.out.println("taille talon "+ (int) (Math.random()* cards.size()) );
 		
 	}
 	
 	public Carte carteAuPif() {
+		//System.out.println("nombre aleatoire "+(int) (Math.random() * cards.size()));
 		return cards.get((int) Math.random() * cards.size());
 	}
 	

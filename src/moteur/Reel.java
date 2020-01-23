@@ -29,8 +29,8 @@ public class Reel extends Joueur{
 	}
 
 
-	public Reel( String prenom, int age) {
-		super();
+	public Reel( String prenom, int age, int numeroJoueur) {
+		super(numeroJoueur);
 		this.prenom = prenom;
 		this.age = age;
 	}

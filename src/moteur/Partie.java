@@ -36,7 +36,7 @@ public class Partie {
 		
 		// initialisation
 		
-		joueurEnCours = 0;
+		joueurEnCours = 1;
 		sens = 1;
 		fin = false;
 		
@@ -63,6 +63,8 @@ public class Partie {
 		// création des joueurs reels
 		
 		joueur = new ArrayList<>();
+		
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Veuillez saisir le nombre de joueurs :");
@@ -70,17 +72,23 @@ public class Partie {
 
 		for (int i=0 ; i<nb ; i++) {
 				
-		//	System.out.println("Veuillez saisir votre prénom :");
 			
-		//	String prenom = sc.nextLine();
-			String prenom = "bob";
-			
-		//	System.out.println("Veuillez saisir votre age :");
-			
-			//int age = sc.nextInt();
+//			System.out.println("Veuillez saisir votre prénom : ");
+//			
+//			String prenom = sc.nextLine();
+//			
+//			System.out.println("Le prénom est "+ prenom);
+//			
+//			System.out.println("Veuillez saisir votre age :");
+//			
+//			int age = sc.nextInt();
+//			
+//			System.out.println("L'age est : " + age);
 			int age = 12;
+			String prenom = "bender";
 			
-			joueur.add(new Reel(prenom , age));
+			joueur.add(new Reel(prenom , age, i+1));
+		//	System.out.println(((Reel) joueur.get(i)).getAge());
 		}
 		
 		System.out.println("Le nombre de Joueurs est : " + joueur.size());
@@ -90,19 +98,25 @@ public class Partie {
 		//Distribution des cartes reelles
 		
 		for (Joueur j : joueur) {
-			for (int x=0 ; x<8 ; x++) {
+			System.out.println("les cartes du joueur " + j.getNumeroJoueur() + " sont :");
+			for (int x=0 ; x<7 ; x++) {
 				j.pioche(talon);
-
-
+				//System.out.println("la taille de cem "+j.getCarteEnMain().size());
+				Carte carteTiree = j.getCarteEnMain().get(x);
+				System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString());
+				
+				
+				
+				
 			}
-		System.out.println("les cartes du joueur " + j.getNumeroJoueur() + " sont : " + j.getCarteEnMain());
-		}
 		
+		}
+	
 		//Creation des joueurs virtuels et distribution
 		
-		joueur.add(new Virtuel());
+		joueur.add(new Virtuel(10));
 		
-		for (int x=0 ; x<8 ; x++) {
+		for (int x=0 ; x<7 ; x++) {
 
 		joueur.get(joueur.size() - 1).pioche(talon);
 		
@@ -134,11 +148,12 @@ public class Partie {
 		ArrayList<Carte> carteJouable; 
 		carteJouable = new ArrayList<Carte>();
 		
-		//System.out.println(" mes cartes sont : " + joueur.get(joueurEnCours).getCarteEnMain());
+		
+		
 		
 		
 		for ( int x = 0 ; x < joueur.get(joueurEnCours).getCarteEnMain().size() ; x++  ) {
-			
+			//System.out.println(" mes cartes sont : " + joueur.get(joueurEnCours).getCarteEnMain().get(x).getClass().getSimpleName());
 			
 			//Test pour carte speciale avec couleur ou noir
 			

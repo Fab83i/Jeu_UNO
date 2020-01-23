@@ -5,10 +5,25 @@ import java.util.ArrayList;
 public abstract class Joueur {
 	
 	
-	private ArrayList<Carte> carteEnMain;
+	private ArrayList<Carte> carteEnMain = new ArrayList<>();
 	private int numeroJoueur;
 	
 	
+
+	public Joueur(ArrayList<Carte> carteEnMain, int numeroJoueur) {
+		
+		this.carteEnMain = carteEnMain;
+		this.numeroJoueur = numeroJoueur;
+	}
+	
+	
+
+	public Joueur(int numeroJoueur) {
+		super();
+		this.numeroJoueur = numeroJoueur;
+	}
+
+
 
 	public int getNumeroJoueur() {
 		return numeroJoueur;
@@ -32,10 +47,9 @@ public abstract class Joueur {
 
 	public void pioche (Talon talon) {
 		
-		carteEnMain = new ArrayList<Carte>();
-		
 		Carte carte = talon.carteAuPif();
 		carteEnMain.add(carte);
+		
 		talon.getCards().remove(carte);
 	}
 
