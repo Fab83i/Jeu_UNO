@@ -52,6 +52,12 @@ public abstract class Joueur {
 		
 		talon.getCards().remove(carte);
 	}
+	
+	public void poser(Carte carte , Pile pile) {
+		pile.ajouterPile(carte);
+		carteEnMain.remove(carte);
+		
+	}
 
 	
 
