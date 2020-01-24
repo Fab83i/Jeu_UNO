@@ -71,24 +71,23 @@ public class Partie {
 		int nb = sc.nextInt();
 
 		for (int i=0 ; i<nb ; i++) {
+			
+			
+			Scanner pren = new Scanner(System.in);
+			System.out.println("Veuillez saisir votre prénom : ");
 
+			String prenom = pren.nextLine();
 
-			//			System.out.println("Veuillez saisir votre prénom : ");
-			//			
-			//			String prenom = sc.nextLine();
-			//			
-			//			System.out.println("Le prénom est "+ prenom);
-			//			
-			//			System.out.println("Veuillez saisir votre age :");
-			//			
-			//			int age = sc.nextInt();
-			//			
-			//			System.out.println("L'age est : " + age);
-			int age = 12;
-			String prenom = "bender";
+			System.out.println("Le prénom est "+ prenom);
+			
+			Scanner ag = new Scanner(System.in);
+			System.out.println("Veuillez saisir votre age :");
+
+			int age = ag.nextInt();
+
+			System.out.println("L'age est : " + age);
 
 			joueur.add(new Reel(prenom , age, i+1));
-			//	System.out.println(((Reel) joueur.get(i)).getAge());
 		}
 
 		System.out.println("Le nombre de Joueurs est : " + joueur.size());
@@ -185,6 +184,7 @@ public class Partie {
 		ArrayList<Carte> carteJouable; 
 		carteJouable = new ArrayList<Carte>();
 		int addition =0;
+		int taillePile = pile.getCards().size();
 
 		//SuperJoker
 		if (pile.getCards().get(pile.getCards().size()-1) instanceof SuperJoker) {
@@ -240,6 +240,7 @@ public class Partie {
 		//Rien ne correspond = tirage d'une carteAuPif
 		if ( carteJouable.size() == 0) {
 			joueur.get(joueurEnCours).pioche(talon);
+			changerJoueur();
 		}
 
 		//Affichage de mes cartes jouables
@@ -255,32 +256,21 @@ public class Partie {
 
 		}
 		
-		//Choix de la carte à jouer choisir couleur avant de poser à faire
+		//Choix de la carteSpeciale à jouer choisir couleur avant de poser à faire
 		Scanner scanChoix = new Scanner(System.in);
 		System.out.println("Veuillez choisir votre carte: ");
 		int choix = scanChoix.nextInt();
-		joueur.get(joueurEnCours).poser(carteJouable.get(choix), pile);
+		joueur.get(joueurEnCours).poser(carteJouable.get(choix), pile, carteJouable, choix);
 		
-		//If joker, choix de la couleur
-		if (carteJouable.get(choix) instanceof Joker) {
-			Scanner scancoul = new Scanner(System.in);
-			System.out.println("choisis ta couleur :");
-			String choixCouleur = scancoul.nextLine();
-			
-			if (choixCouleur == "rouge") {
-				carteJouable.get(choix).setCouleur(Couleur.Rouge);
-			}
-			if (choixCouleur == "bleu") {
-				carteJouable.get(choix).setCouleur(Couleur.Bleu);
-			}
-			if (choixCouleur == "jaune") {
-				carteJouable.get(choix).setCouleur(Couleur.Jaune);
-			}
-			if (choixCouleur == "vert") {
-				carteJouable.get(choix).setCouleur(Couleur.Vert);
-			}
+		if (pile.getCards().get(taillePile) instanceof Sens) {
+			changerSens();
 			
 		}
+		if (pile.getCards().get(taillePile) instanceof Passer) {
+			changerJoueur();
+			changerJoueur();
+		}
+		
 		
 		System.out.println("la couleur de la nouvelle pile est " + pile.getCards().get(pile.getCards().size()-1).getCouleur());
 		
