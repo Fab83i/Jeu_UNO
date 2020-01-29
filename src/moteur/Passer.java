@@ -2,8 +2,8 @@ package moteur;
 
 public class Passer extends CarteSpeciale{
 
-	public Passer(Couleur couleur) {
-		super(couleur);
+	public Passer(Couleur couleur, int points) {
+		super(couleur, points);
 	}
 
 	@Override

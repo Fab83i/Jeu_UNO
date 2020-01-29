@@ -4,13 +4,22 @@ public class SuperJoker extends CarteSpeciale {
 	
 	private Talon talon;
 	
-	public SuperJoker(Couleur couleur) {
+	
+
+
+
+	public SuperJoker(Couleur couleur, int points) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	
 	
+	
+
+
+
 	public void supJok(Joueur j , Couleur couleur) {
 		
 		for (int i=0 ; i<4 ; i++) {

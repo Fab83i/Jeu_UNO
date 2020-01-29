@@ -18,56 +18,56 @@ public class Talon {
 		
 		// Ajout des cartes classiques 1 à 9 en double
 		for (int i=1 ; i<10 ; i++) {
-			cards.add(new CarteClassique(Couleur.Rouge,i));
-			cards.add(new CarteClassique(Couleur.Rouge,i));
-			cards.add(new CarteClassique(Couleur.Vert,i));
-			cards.add(new CarteClassique(Couleur.Vert,i));
-			cards.add(new CarteClassique(Couleur.Bleu,i));
-			cards.add(new CarteClassique(Couleur.Bleu,i));
-			cards.add(new CarteClassique(Couleur.Jaune,i));
-			cards.add(new CarteClassique(Couleur.Jaune,i));
+			cards.add(new CarteClassique(Couleur.Rouge,i,i));
+			cards.add(new CarteClassique(Couleur.Rouge,i,i));
+			cards.add(new CarteClassique(Couleur.Vert,i,i));
+			cards.add(new CarteClassique(Couleur.Vert,i,i));
+			cards.add(new CarteClassique(Couleur.Bleu,i,i));
+			cards.add(new CarteClassique(Couleur.Bleu,i,i));
+			cards.add(new CarteClassique(Couleur.Jaune,i,i));
+			cards.add(new CarteClassique(Couleur.Jaune,i,i));
 			
 			
 		}
 		
 		// Ajout des 0 
 		
-		cards.add(new CarteClassique(Couleur.Bleu,0));
-		cards.add(new CarteClassique(Couleur.Rouge,0));
-		cards.add(new CarteClassique(Couleur.Jaune,0));
-		cards.add(new CarteClassique(Couleur.Vert,0));
+		cards.add(new CarteClassique(Couleur.Bleu,0,0));
+		cards.add(new CarteClassique(Couleur.Rouge,0,0));
+		cards.add(new CarteClassique(Couleur.Jaune,0,0));
+		cards.add(new CarteClassique(Couleur.Vert,0,0));
 
 		
 		
 		// Ajout des cartes speciales
 		for (int i=1 ; i<3 ; i++) {
-			cards.add(new PlusDeux(Couleur.Rouge));
-			cards.add(new PlusDeux(Couleur.Bleu));
-			cards.add(new PlusDeux(Couleur.Vert));
-			cards.add(new PlusDeux(Couleur.Jaune));
+			cards.add(new PlusDeux(Couleur.Rouge, 20));
+			cards.add(new PlusDeux(Couleur.Bleu, 20));
+			cards.add(new PlusDeux(Couleur.Vert, 20));
+			cards.add(new PlusDeux(Couleur.Jaune, 20));
 			
 		}
 		
 		for (int i=1 ; i<5 ; i++) {
-			cards.add(new Joker(Couleur.Noir));		
+			cards.add(new Joker(Couleur.Noir, 50));		
 		}
 		
 		for (int i=1 ; i<5 ; i++) {
-			cards.add(new SuperJoker(Couleur.Noir));
+			cards.add(new SuperJoker(Couleur.Noir, 50));
 		}
 		
 		for (int i=1 ; i<3 ; i++) {
-			cards.add(new Passer(Couleur.Bleu));
-			cards.add(new Passer(Couleur.Jaune));
-			cards.add(new Passer(Couleur.Rouge));
-			cards.add(new Passer(Couleur.Vert));
+			cards.add(new Passer(Couleur.Bleu, 20));
+			cards.add(new Passer(Couleur.Jaune, 20));
+			cards.add(new Passer(Couleur.Rouge, 20));
+			cards.add(new Passer(Couleur.Vert, 20));
 		}
 		
 		for (int i=1 ; i<3 ; i++) {
-			cards.add(new Sens(Couleur.Bleu));
-			cards.add(new Sens(Couleur.Jaune));
-			cards.add(new Sens(Couleur.Rouge));
-			cards.add(new Sens(Couleur.Vert));
+			cards.add(new Sens(Couleur.Bleu, 20));
+			cards.add(new Sens(Couleur.Jaune, 20));
+			cards.add(new Sens(Couleur.Rouge, 20));
+			cards.add(new Sens(Couleur.Vert, 20));
 		}
 		
 		Collections.shuffle(cards);

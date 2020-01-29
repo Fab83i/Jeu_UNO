@@ -145,11 +145,6 @@ public class Partie {
 
 		//}
 
-
-
-
-
-
 	}
 
 
@@ -181,6 +176,145 @@ public class Partie {
 
 	public void jouerReel(Pile pile) {
 
+		ArrayList<Carte> carteJouable; 
+		carteJouable = new ArrayList<Carte>();
+		int addition =0;
+		int taillePile = pile.getCards().size();
+
+		//SuperJoker
+		if (pile.getCards().get(pile.getCards().size()-1) instanceof SuperJoker) {
+			for (int a=0 ; a<4 ; a++) {
+				joueur.get(joueurEnCours).pioche(talon);
+			}
+			changerJoueur();
+			
+			//affichage carteEnMain
+			for (int x = 0 ; x<joueur.get(joueurEnCours).getCarteEnMain().size() ; x++) {
+				Carte carteTiree = joueur.get(joueurEnCours).getCarteEnMain().get(x);
+				if (carteTiree instanceof CarteClassique) {
+					System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString() + "numéro " + ((CarteClassique) carteTiree).getNumero() );
+				}
+				else {
+					System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString() );
+				}
+			}
+			return;
+
+		}
+		//Passer
+		if (pile.getCards().get(pile.getCards().size()-1) instanceof Passer) {
+			changerJoueur();
+			return;
+		}
+		//PlusDeux
+		if (pile.getCards().get(pile.getCards().size()-1) instanceof PlusDeux) {
+			for (int b = pile.getCards().size()-1 ; b>0 ; b--) {
+				while(pile.getCards().get(b) instanceof PlusDeux) {
+					addition++;
+				}
+			}
+			for (int x = 0 ; x< joueur.get(joueurEnCours).getCarteEnMain().size() -1 ; x++) {
+				if (joueur.get(joueurEnCours).getCarteEnMain().get(x) instanceof PlusDeux) {
+					carteJouable.add(joueur.get(joueurEnCours).getCarteEnMain().get(x));
+				}
+			}
+			if (carteJouable.size() == 0) {
+				for (int c = 1 ; c< 2*addition ; c++ ) {
+					joueur.get(joueurEnCours).pioche(talon);
+				}
+				changerJoueur();
+				return;
+
+			}
+
+		}
+
+		for (int d = 0 ; d <joueur.get(joueurEnCours).getCarteEnMain().size() -1 ; d++ ) {
+			//meme couleur
+			if (joueur.get(joueurEnCours).getCarteEnMain().get(d).getCouleur() == pile.getCards().get(pile.getCards().size()-1).getCouleur()) {
+				carteJouable.add(joueur.get(joueurEnCours).getCarteEnMain().get(d));
+			}
+			//superJoker ou joker
+			if (joueur.get(joueurEnCours).getCarteEnMain().get(d).getCouleur() == Couleur.Noir) {
+				carteJouable.add(joueur.get(joueurEnCours).getCarteEnMain().get(d));
+			}
+			//meme chiffre
+			if (pile.getCards().get(pile.getCards().size()-1) instanceof CarteClassique && joueur.get(joueurEnCours).getCarteEnMain().get(d) instanceof CarteClassique ) {
+				if (((CarteClassique) joueur.get(joueurEnCours).getCarteEnMain().get(d)).getNumero() == ((CarteClassique) pile.getCards().get(pile.getCards().size()-1)).getNumero()) {
+					carteJouable.add(joueur.get(joueurEnCours).getCarteEnMain().get(d));
+				}
+			}
+
+		}
+		//Rien ne correspond = tirage d'une carteAuPif
+		if ( carteJouable.size() == 0) {
+			joueur.get(joueurEnCours).pioche(talon);
+			changerJoueur();
+			
+			//affichage carteEnMain
+			for (int x = 0 ; x<joueur.get(joueurEnCours).getCarteEnMain().size() ; x++) {
+				Carte carteTiree = joueur.get(joueurEnCours).getCarteEnMain().get(x);
+				if (carteTiree instanceof CarteClassique) {
+					System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString() + "numéro " + ((CarteClassique) carteTiree).getNumero() );
+				}
+				else {
+					System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString() );
+				}
+			}
+			return;
+		}
+
+		//Affichage de mes cartes jouables
+		System.out.println("le nb de carteJouable est "+ carteJouable.size());
+		System.out.println("Les carteJouable sont : ");
+		for (int f=0 ; f<carteJouable.size() ; f++) {
+			if(carteJouable.get(f) instanceof CarteClassique) {
+				System.out.println(carteJouable.get(f) + "" + carteJouable.get(f).getCouleur() + "numéro " + ((CarteClassique) carteJouable.get(f)).getNumero());
+			}
+			else {
+				System.out.println(carteJouable.get(f) + "" + carteJouable.get(f).getCouleur());
+			}
+
+		}
+		
+		//Choix de la carteSpeciale à jouer choisir couleur avant de poser à faire
+		Scanner scanChoix = new Scanner(System.in);
+		System.out.println("Veuillez choisir votre carte: ");
+		int choix = scanChoix.nextInt();
+		joueur.get(joueurEnCours).poser(carteJouable.get(choix), pile);
+		
+		if (pile.getCards().get(taillePile) instanceof Sens) {
+			changerSens();
+			
+		}
+		if (pile.getCards().get(taillePile) instanceof Passer) {
+			changerJoueur();
+			changerJoueur();
+		}
+		
+		
+		System.out.println("la couleur de la nouvelle pile est " + pile.getCards().get(pile.getCards().size()-1).getCouleur() + "le type " + pile.getCards().get(pile.getCards().size()-1).toString());
+		
+		for (int x = 0 ; x<joueur.get(joueurEnCours).getCarteEnMain().size() ; x++) {
+			Carte carteTiree = joueur.get(joueurEnCours).getCarteEnMain().get(x);
+			if (carteTiree instanceof CarteClassique) {
+				System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString() + "numéro " + ((CarteClassique) carteTiree).getNumero() );
+			}
+			else {
+				System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString() );
+			}
+		}
+		
+		
+
+
+
+	}
+	
+	
+	//Coder le choix des joueurs virtuels
+	public void jouerVirtuel(Pile pile) {
+		
 		ArrayList<Carte> carteJouable; 
 		carteJouable = new ArrayList<Carte>();
 		int addition =0;
@@ -257,9 +391,10 @@ public class Partie {
 		}
 		
 		//Choix de la carteSpeciale à jouer choisir couleur avant de poser à faire
-		Scanner scanChoix = new Scanner(System.in);
-		System.out.println("Veuillez choisir votre carte: ");
-		int choix = scanChoix.nextInt();
+		//Ajouter les points de cartes
+		for (int x=0 ; x<carteJouable.size() ; x++) {
+			
+		}
 		joueur.get(joueurEnCours).poser(carteJouable.get(choix), pile, carteJouable, choix);
 		
 		if (pile.getCards().get(taillePile) instanceof Sens) {
@@ -283,9 +418,7 @@ public class Partie {
 				System.out.println(carteTiree.getCouleur()+ " " +carteTiree.toString() );
 			}
 		}
-
-
-
+		
 	}
 
 

@@ -54,8 +54,8 @@ public abstract class Joueur {
 		talon.getCards().remove(carte);
 	}
 	
-	public void poser(Carte carte , Pile pile , ArrayList<Carte> carteJouable, int choix) {
-		if (carte instanceof Joker || carte instanceof SuperJoker) {
+	public void poser(Carte carte , Pile pile) {
+		if (carte instanceof Joker||carte instanceof SuperJoker) {
 			
 			//choix de la couleur
 			Scanner scancoul = new Scanner(System.in);
@@ -63,21 +63,53 @@ public abstract class Joueur {
 			String choixCouleur = scancoul.nextLine();
 			
 			if (choixCouleur == "rouge") {
-				carteJouable.get(choix).setCouleur(Couleur.Rouge);
+				//pile.ajouterPile(new Joker(Couleur.Rouge, 50));
+				carte.setCouleur(Couleur.Rouge);
 			}
 			if (choixCouleur == "bleu") {
-				carteJouable.get(choix).setCouleur(Couleur.Bleu);
-			}
+				//pile.ajouterPile(new Joker(Couleur.Bleu, 50));
+				carte.setCouleur(Couleur.Bleu);
+				}
 			if (choixCouleur == "jaune") {
-				carteJouable.get(choix).setCouleur(Couleur.Jaune);
-			}
+				carte.setCouleur(Couleur.Jaune);
+				//pile.ajouterPile(new Joker(Couleur.Jaune, 50));
+				}
 			if (choixCouleur == "vert") {
-				carteJouable.get(choix).setCouleur(Couleur.Vert);
-			}
+				carte.setCouleur(Couleur.Vert);
+				//pile.ajouterPile(new Joker(Couleur.Vert, 50));
+				}
+			
 		}
-		pile.ajouterPile(carte);
 		carteEnMain.remove(carte);
+		pile.ajouterPile(carte);
 		
+//		if (carte instanceof SuperJoker) {
+//			//choix de la couleur
+//			Scanner scancoule = new Scanner(System.in);
+//			System.out.println("choisis ta couleur :");
+//			String choixCouleur = scancoule.nextLine();
+//			
+//			if (choixCouleur == "rouge") {
+//				pile.ajouterPile(new SuperJoker(Couleur.Rouge, 50));
+//			}
+//			if (choixCouleur == "bleu") {
+//				pile.ajouterPile(new SuperJoker(Couleur.Bleu, 50));
+//				}
+//			if (choixCouleur == "jaune") {
+//				pile.ajouterPile(new SuperJoker(Couleur.Jaune, 50));
+//				}
+//			if (choixCouleur == "vert") {
+//				pile.ajouterPile(new SuperJoker(Couleur.Vert, 50));
+//				}
+//			carteEnMain.remove(carte);
+//		}
+		
+		}
+		
+	
+	
+	
+	
 	}
 
 	
@@ -86,4 +118,4 @@ public abstract class Joueur {
 	
 	
 
-}
+

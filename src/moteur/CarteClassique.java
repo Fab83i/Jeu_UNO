@@ -7,18 +7,17 @@ public class CarteClassique extends Carte {
 	private int numero;
 	
 	
-	public CarteClassique( Couleur couleur , int numero) {
+	public CarteClassique( Couleur couleur , int numero, int points) {
 		
-		super(couleur);
+		super(couleur, points);
 		this.numero = numero;
+		
 		
 	}
 	
 
 
-	public int getNumero() {
-		return numero;
-	}
+	
 
 
 
@@ -29,11 +28,17 @@ public class CarteClassique extends Carte {
 
 
 
+
+
+
+
+	public int getNumero() {
+		return numero;
+	}
 	
 	
-	
-	
-	
+
+
 	
 	
 	

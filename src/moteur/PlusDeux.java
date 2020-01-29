@@ -7,8 +7,8 @@ public class PlusDeux extends CarteSpeciale{
 
 	
 
-	public PlusDeux(Couleur couleur) {
-		super(couleur);
+	public PlusDeux(Couleur couleur, int points) {
+		super(couleur, points);
 		
 		
 		
