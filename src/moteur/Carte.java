@@ -1,21 +1,16 @@
 package moteur;
 
 public abstract class Carte {
-	
-	
-	
-	
 
 	Couleur couleur;
-	protected static int points ;
-	
+	int points;
 
 	public Carte(Couleur couleur, int points) {
 		this.couleur = couleur;
-		Carte.points = points;
-		
+		this.points = points;
+
 	}
-	
+
 	public void setCouleur(Couleur couleur) {
 		this.couleur = couleur;
 	}
@@ -23,9 +18,9 @@ public abstract class Carte {
 	public Couleur getCouleur() {
 		return this.couleur;
 	}
-	
+
 	public int getPoints() {
-		return Carte.points;
+		return this.points;
 	}
 
 	@Override
@@ -33,16 +28,4 @@ public abstract class Carte {
 		return "Carte [toString()=" + super.toString() + "]";
 	}
 
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-	
-	
 }

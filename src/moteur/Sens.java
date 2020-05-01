@@ -4,8 +4,8 @@ public class Sens extends CarteSpeciale {
 	
 	private Partie p;
 	
-	public Sens(Couleur couleur, int points) {
-		super(couleur, points);
+	public Sens(Couleur couleur, int points, boolean effect) {
+		super(couleur, points, effect);
 	}
 	
 	

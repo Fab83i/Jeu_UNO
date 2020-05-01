@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Pile {
 	
 	private ArrayList<Carte> cards;
-	private Partie p;
+	//private Partie p;
 	
 	public Pile(Partie p) {
 		cards = new ArrayList<>();
-		this.p = p;
+		//this.p = p;
 		
 	}
 	
