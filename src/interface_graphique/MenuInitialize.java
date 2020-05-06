@@ -8,7 +8,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.GridLayout;
+import java.awt.Image;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.FlowLayout;
 
 public class MenuInitialize extends JFrame {
 
@@ -43,19 +49,35 @@ public class MenuInitialize extends JFrame {
 		
 		JPanel lancement = new JPanel();
 		contentPane.add(lancement, BorderLayout.CENTER);
-		lancement.setLayout(new GridLayout(3, 1, 0, 0));
+		lancement.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton btnJouer = new JButton("Jouer");
-		lancement.add(btnJouer);
+		JLabel logo = new JLabel("logo");
+		ImageIcon png = new ImageIcon("/Users/Fab83i/Documents/Java_Uno/Uno_Project/images/logo.png");
 		
-		JButton btnRegles = new JButton("Régles du jeu");
-		lancement.add(btnRegles);
+		logo.setIcon(png);
+		lancement.add(logo);
+		
+		
+		
+		
+		
 		
 		JPanel poweredBy = new JPanel();
 		contentPane.add(poweredBy, BorderLayout.SOUTH);
 		
 		JLabel lblPoweredByFabi = new JLabel("Powered by Fabi");
 		poweredBy.add(lblPoweredByFabi);
+		
+		JPanel menu = new JPanel();
+		contentPane.add(menu, BorderLayout.EAST);
+		menu.setLayout(new GridLayout(2, 1, 0, 0));
+		
+		
+		JButton btnJouer = new JButton("Jouer");
+		menu.add(btnJouer);
+		
+		JButton btnRegles = new JButton("Régles du jeu");
+		menu.add(btnRegles);
 	}
 
 }
