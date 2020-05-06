@@ -5,23 +5,20 @@ import java.util.ArrayList;
 public class Pile {
 	
 	private ArrayList<Carte> cards;
-	//private Partie p;
 	
-	public Pile(Partie p) {
-		cards = new ArrayList<>();
-		//this.p = p;
-		
+	
+	public Pile() {
+		cards = new ArrayList<>();	
 	}
-	
+	// AJOUTE LA CARTE JOUEE
 	public void ajouterPile(Carte tirage) {
-		cards.add(tirage);
-		
+		cards.add(tirage);	
 	}
-	
+	// PAS UTILE
 	public void remove(Carte tirage) {
 		cards.remove(tirage);
 	}
-
+	// DONNE LES ELEMENTS DE LA PILE
 	public ArrayList<Carte> getCards() {
 		return cards;
 	}

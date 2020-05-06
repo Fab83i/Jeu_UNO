@@ -27,7 +27,7 @@ public class PlusDeux extends CarteSpeciale{
 
 	@Override
 	public String toString() {
-		return "PlusDeux []";
+		return "PlusDeux ";
 	}
 	
 	

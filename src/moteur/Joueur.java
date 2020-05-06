@@ -19,24 +19,17 @@ public abstract class Joueur {
 		this.numeroJoueur = numeroJoueur;
 	}
 
+	// RECUPERE LE NUMERO DU JOUEUR
 	public int getNumeroJoueur() {
 		return numeroJoueur;
 	}
 
-	public void setNumeroJoueur(int numeroJoueur) {
-		this.numeroJoueur = numeroJoueur;
-	}
-
+	// RECUPERE LES CARTES EN MAIN
 	public ArrayList<Carte> getCarteEnMain() {
 		return carteEnMain;
 	}
 
-	public void setCarteEnMain(ArrayList<Carte> carteEnMain) {
-		this.carteEnMain = carteEnMain;
-	}
-
-// PERMET DE PIOCHER UNE CARTE
-
+	// PERMET DE PIOCHER UNE CARTE
 	public void pioche(Talon talon) {
 
 		Carte carte = talon.carteAuPif();
@@ -44,8 +37,10 @@ public abstract class Joueur {
 		talon.getCards().remove(carte);
 	}
 
+	// METHODE ABSTRAITE POUR POSER UNE CARTE. DEFINIE DANS REEL ET VIRTUEL.
 	public abstract void poser(Carte carte, Pile pile);
 	
+	// METHODE ABSTRAITE POUR JOUER LORSQUE C'EST POSSIBLE. DEFINIE DANS REEL ET VIRTUEL.
 	public abstract void jouer(Pile pile, Talon talon, Partie p);
 		
 			

@@ -8,7 +8,7 @@ public class Passer extends CarteSpeciale{
 
 	@Override
 	public String toString() {
-		return "Passer []";
+		return "Passer ";
 	}
 	
 	

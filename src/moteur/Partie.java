@@ -3,7 +3,6 @@ package moteur;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// REGLER LE PROBLEME DES JOKER ET SUPERJOKER (COULEUR ET APPARITION PREMIERE)
 // INTERFACE GRAPHIQUE
 
 public class Partie {
@@ -15,14 +14,15 @@ public class Partie {
 	private int joueurEnCours;
 	private boolean fin;
 
-	public int getSens() {
-		return sens;
-	}
+//	public int getSens() {
+//		return sens;
+//	}
+//
+//	public void setSens(int sens) {
+//		this.sens = sens;
+//	}
 
-	public void setSens(int sens) {
-		this.sens = sens;
-	}
-
+	//METHODE POUR PASSER AU JOUEUR SUIVANT
 	public void changerJoueur() {
 
 		joueurEnCours = joueurEnCours + sens;
@@ -36,10 +36,12 @@ public class Partie {
 
 	}
 
+	// METHODER CHANGER DE SENS 
 	public void changerSens() {
 		sens = - sens;
 	}
 	
+	// METHODE CONDITION POUR JOUER UNE CARTE 
 	public boolean canPlayThisCard( Carte carte) {
 		Carte hautPile = pile.getCards().get(pile.getCards().size()-1);
 		
@@ -62,6 +64,7 @@ public class Partie {
 		
 	}
 
+	// CONSTRUCTEUR DE PARTIE PERMETTANT LE JEU
 	public Partie() {
 
 		// INIT
@@ -70,8 +73,8 @@ public class Partie {
 		fin = false;
 		
 		// CREATION TALON/PILE
-		this.talon = new Talon(this);
-		this.pile = new Pile(this);
+		this.talon = new Talon();
+		this.pile = new Pile();
 
 		System.out.println("Le nombre de carte est : " + talon.getCards().size());
 
@@ -80,6 +83,7 @@ public class Partie {
 
 		Scanner sc = new Scanner(System.in);
 
+		// SELECTION DU NOMBRE DE JOUEURS REELS
 		System.out.println("Veuillez saisir le nombre de joueurs :");
 		int nb = sc.nextInt();
 		for (int i = 0; i < nb; i++) {
@@ -113,19 +117,16 @@ public class Partie {
 		}
 
 		// AFFICHAGE PREMIERE CARTE DE PILE
-		pile.ajouterPile(talon.carteAuPif());
+		Carte premiere = talon.carteAuPif();
+		if(premiere instanceof SuperJoker || premiere instanceof Joker) {
+			premiere = talon.carteAuPif();
+		}
+		pile.ajouterPile(premiere);
 
-//		if (pile.getCards().get(pile.getCards().size() - 1) instanceof CarteClassique) {
-//			System.out.println("la première pile est " + pile.getCards().get(pile.getCards().size() - 1).toString()
-//					+ pile.getCards().get(pile.getCards().size() - 1).getCouleur() + " numéro "
-//					+ ((CarteClassique) pile.getCards().get(pile.getCards().size() - 1)).getNumero());
-//		} else {
-//			System.out.println("la première pile est " + pile.getCards().get(pile.getCards().size() - 1).toString()
-//					+ pile.getCards().get(pile.getCards().size() - 1).getCouleur());
-//		}
-		
+
+		// DEROULEMENT DU JEU 
 		while(fin == false) {
-			System.out.println("DEBUT D'UN NOUVEAU TOUR");
+			System.out.println("**************** DEBUT D'UN NOUVEAU TOUR *******************");
 			faireUnTour(this);
 			changerJoueur();
 		}
@@ -135,15 +136,24 @@ public class Partie {
 	public void faireUnTour(Partie p) {
 		
 		
-		// AFFICHAGE DE LA CARTE PILE
-		System.out.println("le joueur en cours est : "+ joueurEnCours);
+		// AFFICHAGE DU NOM JOUEUR
+		if(joueur.get(joueurEnCours) instanceof Reel) {
+			System.out.println("le joueur en cours est : "+ ((Reel) joueur.get(joueurEnCours)).getPrenom());
+		}
+		else {
+			System.out.println("le joueur en cours est VIRTUEL : "+ joueur.get(joueurEnCours).getNumeroJoueur());
+		}
+		
+		// AFFICHAGE DU NOMBRE DE CARTES EN MAIN
 		System.out.println( "Le joueur a : "+joueur.get(joueurEnCours).getCarteEnMain().size()+ " cartes");
+		
+		// AFFICHAGE DE LA PREMIERE CARTE DE LA PILE 
 		if (pile.getCards().get(pile.getCards().size() - 1) instanceof CarteClassique) {
-			System.out.println("la première pile est " + pile.getCards().get(pile.getCards().size() - 1).toString()
+			System.out.println("               la première carte de la pile est " + pile.getCards().get(pile.getCards().size() - 1).toString()
 					+ pile.getCards().get(pile.getCards().size() - 1).getCouleur() + " numéro "
 					+ ((CarteClassique) pile.getCards().get(pile.getCards().size() - 1)).getNumero());
 		} else {
-			System.out.println("la première pile est " + pile.getCards().get(pile.getCards().size() - 1).toString()
+			System.out.println("               la première pile est " + pile.getCards().get(pile.getCards().size() - 1).toString()
 					+ pile.getCards().get(pile.getCards().size() - 1).getCouleur());
 		}
 		

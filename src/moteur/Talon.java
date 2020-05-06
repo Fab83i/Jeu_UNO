@@ -9,10 +9,10 @@ public class Talon {
 
 	private ArrayList<Carte> cards;
 
-	public Talon(Partie p) {
+	public Talon() {
 		cards = new ArrayList<>();
 
-		// Ajout des cartes classiques 1 à 9 en double
+		// AJOUT DES CARTES CLASSIQUES 
 		for (int i = 1; i < 10; i++) {
 			cards.add(new CarteClassique(Couleur.Rouge, i, i));
 			cards.add(new CarteClassique(Couleur.Rouge, i, i));
@@ -25,14 +25,14 @@ public class Talon {
 
 		}
 
-		// Ajout des 0
+		// AJOUT DES 0
 
 		cards.add(new CarteClassique(Couleur.Bleu, 0, 0));
 		cards.add(new CarteClassique(Couleur.Rouge, 0, 0));
 		cards.add(new CarteClassique(Couleur.Jaune, 0, 0));
 		cards.add(new CarteClassique(Couleur.Vert, 0, 0));
 
-		// Ajout des cartes speciales
+		// AJOUT CARTES SPECIALES
 		for (int i = 1; i < 3; i++) {
 			cards.add(new PlusDeux(Couleur.Rouge, 20, true));
 			cards.add(new PlusDeux(Couleur.Bleu, 20, true));
@@ -63,14 +63,17 @@ public class Talon {
 			cards.add(new Sens(Couleur.Vert, 20, true));
 		}
 
+		// MELANGE DES CARTES DU TALON
 		Collections.shuffle(cards);
 
 	}
 
+	// TIRAGE D'UNE CARTE
 	public Carte carteAuPif() {
 		return cards.get((int) Math.random() * cards.size());
 	}
 
+	// ENLEVEMENT D'UNE CARTE
 	public void remove(Carte tirage) {
 		cards.remove(tirage);
 	}

@@ -6,9 +6,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
 
-public class MaJFrame extends JFrame {
+public class Lancement extends JFrame {
 
 	private JPanel contentPane;
 
@@ -19,7 +18,7 @@ public class MaJFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MaJFrame frame = new MaJFrame();
+					Lancement frame = new Lancement();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,17 +30,13 @@ public class MaJFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MaJFrame() {
+	public Lancement() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
-		JPanel pageClassique = new JPanel();
-		contentPane.add(pageClassique, BorderLayout.CENTER);
-		pageClassique.setLayout(new GridLayout(0, 2, 0, 0));
 	}
 
 }

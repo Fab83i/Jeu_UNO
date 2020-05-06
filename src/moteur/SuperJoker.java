@@ -11,7 +11,7 @@ public class SuperJoker extends CarteSpeciale {
 
 	@Override
 	public String toString() {
-		return "SuperJoker";
+		return "SuperJoker ";
 	}
 
 }

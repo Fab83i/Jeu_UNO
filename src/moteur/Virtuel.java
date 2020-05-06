@@ -11,6 +11,7 @@ public class Virtuel extends Joueur{
 		
 	}
 	
+	// METHODE PERMETTANT AU JOUEUR VIRTUEL DE JOUER LORSQU'IL PEUT
 	public void jouer(Pile pile, Talon talon, Partie p) {
 		Carte hautPile = pile.getCards().get(pile.getCards().size()-1);
 		ArrayList<Carte> carteJouable;
@@ -90,6 +91,7 @@ public class Virtuel extends Joueur{
 				break;
 			}
 			getCarteEnMain().remove(carte);
+			return;
 		}
 
 		// CAS SUPERJOKER
@@ -112,6 +114,7 @@ public class Virtuel extends Joueur{
 				break;
 			}
 			getCarteEnMain().remove(carte);
+			return;
 		}
 
 		// CAS CARTE AUTRE

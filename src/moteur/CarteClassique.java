@@ -13,7 +13,7 @@ public class CarteClassique extends Carte {
 
 	@Override
 	public String toString() {
-		return "CarteClassique []";
+		return "CarteClassique ";
 	}
 
 	public int getNumero() {

@@ -7,12 +7,12 @@ public enum Couleur {
 	Jaune (3),
 	Vert (4),
 	Noir (5);
-	//Objets directement construits
+	//OBJETS DIRECTEMENT CONSTRUITS
 	 
 	   
 	  private int valeur = 0;
 	   
-	  //Constructeur
+	  //CONSTRUCTEUR
 	  Couleur(int valeur){
 	    this.valeur = valeur;
 	  }
