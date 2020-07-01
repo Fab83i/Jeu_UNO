@@ -14,13 +14,6 @@ public class Partie {
 	private int joueurEnCours;
 	private boolean fin;
 
-//	public int getSens() {
-//		return sens;
-//	}
-//
-//	public void setSens(int sens) {
-//		this.sens = sens;
-//	}
 
 	//METHODE POUR PASSER AU JOUEUR SUIVANT
 	public void changerJoueur() {

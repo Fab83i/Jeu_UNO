@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="moteur.MenuInit">
+  <grid id="27dc6" binding="menu" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="61" y="61" width="1110" height="851"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="14cf8" binding="buttons" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="bee3f" class="javax.swing.JButton" binding="rulesButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Règles du Jeu"/>
+            </properties>
+          </component>
+          <component id="7b0e4" class="javax.swing.JButton" binding="playButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Jouer"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="df50b" binding="logo_info" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="6359e" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <autoscrolls value="true"/>
+              <background color="-1317146"/>
+              <icon value="logo.png"/>
+              <maximumSize width="800" height="400"/>
+              <minimumSize width="800" height="400"/>
+              <preferredSize width="1100" height="800"/>
+              <text value=""/>
+              <verticalAlignment value="0"/>
+              <verticalTextPosition value="0"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="moteur.RulesPanel">
+  <grid id="27dc6" binding="contentPane" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="564"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="2af10" class="javax.swing.JButton" binding="returnButton">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Retour"/>
+        </properties>
+      </component>
+      <component id="7ce24" class="javax.swing.JTextPane" binding="rulesText">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Tout d’abord, un des joueurs distribue à chacun 7 cartes. Le reste des cartes fait office de pioche. Pour commencer, le joueur ayant distribué retourne la première carte de la pioche et le joueur situé à gauche commence la partie. Il doit recouvrir la carte de la pioche par une carte d’une même couleur, du même chiffre ou du même symbole. Si le joueur ne peut pas jouer, il a la possibilité de poser une carte « joker » ou « +4 ». Dans le cas ou le joueur ne possède aucune de ces cartes, il doit en piocher une. Si cette carte peut être jouée, il peut directement la poser, sinon il devra la conserver dans son jeu.  Lorsque qu’un joueur n’a plus qu’une carte en sa possession, il doit crier « Uno » pour avertir tous les autres joueurs. S’il oublie de le faire et qu’un joueur s’en aperçoit, il devra piocher 2 cartes en pénalité."/>
+        </properties>
+      </component>
+      <component id="fcacc" class="javax.swing.JTextPane" binding="plusDeuxContenu">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="La carte « +2 » :  Lorsqu’un joueur joue cette carte, le joueur suivant doit piocher 2 cartes et passe son tour et cela même si c’est la première carte retournée en début de partie."/>
+        </properties>
+      </component>
+      <component id="131a7" class="javax.swing.JTextPane" binding="sensContenu">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="La carte « Inversement de sens » :  Lorsqu’un joueur joue cette carte, le sens de la partie est inversée. Si la partie se déroulait dans le sens des aiguilles d’une montre, elle passera donc dans le sens inverse. Même si elle est la première carte retournée en début de partie, elle doit être prise en compte."/>
+        </properties>
+      </component>
+      <component id="3b978" class="javax.swing.JTextPane" binding="passeContenu">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="La carte « Passe ton tour » :  Lorsqu’un joueur joue cette carte, le joueur suivant doit passer son tour. Même si elle est la première carte retournée en début de partie, elle doit être prise en compte."/>
+        </properties>
+      </component>
+      <component id="57039" class="javax.swing.JTextPane" binding="jokerContenu">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="La carte « Joker » :  Lorsqu’un joueur joue cette carte, il peut ou non choisir de changer de couleur en l’annonçant aux autre joueurs. Si elle est la première carte retournée en début de partie, le premier joueur choisit donc une couleur."/>
+        </properties>
+      </component>
+      <component id="50aa2" class="javax.swing.JTextPane" binding="superJokerContenu">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="true"/>
+          <enabled value="true"/>
+          <text value="La carte « +4 » :  Lorsqu’un joueur joue cette carte, le joueur suivant doit piocher 4 cartes et passer son tour. De plus, le joueur qui a posé cette carte peut choisir ou non de changer de couleur. Attention cependant, cette carte ne peut être jouée seulement si le joueur n’a pas d’autre solution. Si un joueur décide de bluffer et qu’il se fait démasquer, il aura alors une pénalité."/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
