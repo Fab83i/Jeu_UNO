@@ -18,6 +18,7 @@ public class Pile {
 	public void remove(Carte tirage) {
 		cards.remove(tirage);
 	}
+
 	// DONNE LES ELEMENTS DE LA PILE
 	public ArrayList<Carte> getCards() {
 		return cards;

@@ -57,6 +57,14 @@ public class Partie {
 		
 	}
 
+	public Talon getTalon(){
+		return talon;
+	}
+
+	public Pile getPile() {
+		return pile;
+	}
+
 	// CONSTRUCTEUR DE PARTIE PERMETTANT LE JEU
 	public Partie() {
 

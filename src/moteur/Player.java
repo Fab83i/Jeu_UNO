@@ -7,6 +7,10 @@ public class Player extends JFrame {
     private JPanel mainPanel;
     private JPanel menuRetour;
     private JButton btnRetourMenu;
+    private JPanel mainPlayer;
+    private JPanel adversairePanel;
+    private JPanel gamePanel;
+    private JPanel myCardsPanel;
 
 
     public Player(){
