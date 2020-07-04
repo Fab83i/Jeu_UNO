@@ -1,5 +1,7 @@
 package moteur;
 
+import java.awt.image.BufferedImage;
+
 public abstract class CarteSpeciale extends Carte {
 	
 	boolean effect;

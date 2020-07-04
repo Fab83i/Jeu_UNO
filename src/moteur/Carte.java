@@ -1,13 +1,17 @@
 package moteur;
 
+import java.awt.image.BufferedImage;
+
 public abstract class Carte {
 
 	Couleur couleur;
 	int points;
+	BufferedImage image;
 
 	public Carte(Couleur couleur, int points) {
 		this.couleur = couleur;
 		this.points = points;
+
 
 	}
 

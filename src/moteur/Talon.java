@@ -1,9 +1,13 @@
 package moteur;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
 import moteur.Couleur;
+
+import javax.imageio.ImageIO;
 
 public class Talon {
 
@@ -14,6 +18,7 @@ public class Talon {
 
 		// AJOUT DES CARTES CLASSIQUES 
 		for (int i = 1; i < 10; i++) {
+
 			cards.add(new CarteClassique(Couleur.Rouge, i, i));
 			cards.add(new CarteClassique(Couleur.Rouge, i, i));
 			cards.add(new CarteClassique(Couleur.Vert, i, i));

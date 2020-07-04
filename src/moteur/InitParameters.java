@@ -46,7 +46,7 @@ public class InitParameters extends JFrame{
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Player newPlayer = new Player();
+                Player newPlayer = new Player(new Partie());
                 newPlayer.setVisible(true);
                 InitParameters.this.setVisible(false);
             }
