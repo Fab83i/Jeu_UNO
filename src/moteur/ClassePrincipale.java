@@ -8,6 +8,7 @@ public class ClassePrincipale {
 
 		
 		//Partie partie = new Partie();
+
 		
 		
 	}

@@ -12,7 +12,7 @@ public enum Couleur {
 	   
 	  private int valeur = 0;
 	  private String couleur;
-	   
+
 	  //CONSTRUCTEUR
 	  Couleur(int valeur, String couleur){
 	    this.valeur = valeur;

@@ -66,7 +66,8 @@ public class Partie {
 	}
 
 	// CONSTRUCTEUR DE PARTIE PERMETTANT LE JEU
-	public Partie() {
+
+	public Partie(int nbJoueur, ArrayList<String> nomsJoueurs) {
 
 		// INIT
 		joueurEnCours = 0;
@@ -81,16 +82,28 @@ public class Partie {
 
 		// CREATION REEL
 		joueur = new ArrayList<>();
-
+		/*
 		Scanner sc = new Scanner(System.in);
+		 */
 
 		// SELECTION DU NOMBRE DE JOUEURS REELS
+		/*
+		Automatisation du nombre de joueurs et de la saisie des prénoms en fonction de la séléction sur l'interface InitParameters
+		*/
+		/*
+		Ligne de commande pour saisie du nombre de joueurs dans la console
+
 		System.out.println("Veuillez saisir le nombre de joueurs :");
 		int nb = sc.nextInt();
-		for (int i = 0; i < nb; i++) {
+		*/
+
+		for (int i = 0; i < nbJoueur; i++) {
+
+			/*   Ligne de commande pour saisie des prénoms dans la console
 			Scanner pren = new Scanner(System.in);
 			System.out.println("Veuillez saisir votre prénom : ");
-			String prenom = pren.nextLine();
+			 */
+			String prenom = nomsJoueurs.get(i);
 			System.out.println("Le prénom est " + prenom);
 			joueur.add(new Reel(prenom, i));
 		}

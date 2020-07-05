@@ -2,6 +2,7 @@ package moteur;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Player extends JFrame {
     private JPanel mainPanel;
@@ -11,17 +12,16 @@ public class Player extends JFrame {
     private JPanel adversairePanel;
     private JPanel gamePanel;
     private JPanel myCardsPanel;
-    private JPanelGame gameView;
 
 
-    public Player(Partie p){
+    public Player(int nbJoueur, ArrayList<String> listPrenoms){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
         this.setPreferredSize(new Dimension(1500, 900));
         this.setTitle("Nouvelle partie");
-
-        this.gameView = new JPanelGame(p);
+        Partie p = new Partie(nbJoueur, listPrenoms);
+        this.gamePanel = new JPanelGame(p);
 
     }
 }
